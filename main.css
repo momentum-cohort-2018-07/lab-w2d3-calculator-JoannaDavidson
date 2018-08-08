@@ -30,11 +30,16 @@
     border: 1px solid #fff9de;
   }
 
-  .calc-operator {
+  .calc-button_clear {
+    width: 100px;
+    border: 1px solid #fff9de;
+}
+
+.calc-operator {
     background: linear-gradient(rgba(255, 255, 255, .5),rgba(255, 255, 255, .5));
     color: #000000;
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .calc-fn {
