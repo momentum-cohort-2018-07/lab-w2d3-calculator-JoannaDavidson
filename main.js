@@ -58,7 +58,9 @@ function displayEval() {
     if (displayDiv.innerText === "") {
         displayDiv.innerText = "";
     } else {
-        var total = eval(displayDiv.innerText);
+        var displayString = displayDiv.innerText;
+        var changedMultiplier = displayString.replace("x", "*");
+        var total = eval(changedMultiplier);
         displayDiv.innerText = total;
     }
 }
