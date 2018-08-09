@@ -46,7 +46,7 @@
     font-weight: bold;
     font-size: 2rem;
   }
-
+/* 
   .calc-fn {
 
   }
@@ -54,7 +54,7 @@
 
   #calc-clear {
 
-  }
+  } */
 
   #calc-display {
       background-color: #ed9908;
@@ -64,7 +64,7 @@
       border: 1px solid #fff9de;
       font-size: 2.5rem;
   }
-
+/* 
   #calc-7 {
 
   }
@@ -125,6 +125,5 @@
   }
 
   #calc-addition {
-  }
-  
+  } */
 

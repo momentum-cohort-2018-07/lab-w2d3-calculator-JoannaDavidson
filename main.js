@@ -1,40 +1,45 @@
 var displayDiv = document.getElementById('calc-display');
 
-// var inputButton = document.querySelectorAll('calc-button');
+// Using event bubbling to input into the display. 
+// This adds innerText of each button to the calc display
 
-// inputButton.addEventListener('click', buttonClick);
+document.addEventListener('click', function (event) {
+    if ( event.target.classList.contains( 'calc-button' ) ) {
+        displayDiv.innerText += event.target.innerText;;
+    }
+}, false)
 
-// function buttonClick(buttonPress) {
-//     var displayDiv = document.getElementByID('calc-display');
-//   if (displayDiv.innerText === '') {
-//     displayDiv.innerText = buttonPress;
-//   } else {
-//   displayDiv.innerText += buttonPress;
-//   }
-// }
+// Using event bubbling to change font color of related operator buttons during mouse over/out.
 
-//   if (displayDiv.innerText === '') {
-//     displayDiv.innerText = numberPress;
-//   } else {
-//   displayDiv.innerText += numberPress;
+document.addEventListener('mouseover', function (event) {
+    if ( event.target.classList.contains( 'calc-operator' ) ) {
+        event.target.style.color = "#ffffff";
+    }
+}, false);
 
-// var operatorButton = document.querySelectorAll('calc-operator');
+document.addEventListener('mouseout', function (event) {
+    if ( event.target.classList.contains( 'calc-operator' ) ) {
+        event.target.style.color = "#000000";
+    }
+}, false);
+
+
+// Using event bubbling to change background color of related function buttons during mouse over/out.
+
+document.addEventListener('mouseover', function (event) {
+    if ( event.target.classList.contains( 'calc-fn' ) ) {
+        event.target.style.background = "linear-gradient(rgba(255, 255, 255, .5),rgba(255, 255, 255, .5))";
+    }
+}, false);
+
+document.addEventListener('mouseout', function (event) {
+    if ( event.target.classList.contains( 'calc-fn' ) ) {
+        event.target.style.background = "";
+    }
+}, false);
 
 // Declaring the Clear button
 var clearButton = document.getElementById('calc-clear');
-
-// Changing Clear button on mouseover.
-clearButton.addEventListener('mouseover', clearMouseOver);
-clearButton.addEventListener('mouseout', clearMouseOut)
-
-function clearMouseOver() {
-    clearButton.style.background = "linear-gradient(rgba(255, 255, 255, .5),rgba(255, 255, 255, .5))";
-}
-
-function clearMouseOut() {
-    clearButton.style.background = "";
-}
-
 
 //Pressing the Clear button.
 
@@ -44,7 +49,7 @@ function clearClick() {
   displayDiv.innerText = " ";
 }
 
-// Pressing the Equals button.
+// Pressing the Equals button. Uses eval to read the string in display box as an expression to be evaluated.
 
 var equalsButton = document.querySelector(".calc-button_equals");
 equalsButton.addEventListener("click", displayEval);
