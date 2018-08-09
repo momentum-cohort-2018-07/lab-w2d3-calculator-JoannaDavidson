@@ -30,6 +30,11 @@
     border: 1px solid #fff9de;
   }
 
+  .calc-button_power {
+    width: 80px;
+    border: 1px solid #fff9de;
+  }
+
   .calc-button_clear {
     width: 80px;
     border: 1px solid #fff9de;
